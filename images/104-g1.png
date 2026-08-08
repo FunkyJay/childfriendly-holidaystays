@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
+<title>Resort Dolce Casa - Family &amp; SPA</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="alternate" href="https://www.hoteldolcecasa.it/it/" hreflang="it" lang="it" />
+<link rel="alternate" href="https://www.hoteldolcecasa.it/de/" hreflang="de" lang="de" />
+<link rel="alternate" href="https://www.hoteldolcecasa.it/en/" hreflang="en" lang="en" />
+<meta name="language" content="en" />
+<meta http-equiv="language" content="en" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="author" content="Internet Service"> 
+<script>var cur_language = "en"; </script>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" sizes="32x32" href="../img/favicon/32x32.png" />
+<link rel="apple-touch-icon" sizes="32x32" href="../img/favicon/32x32.png" />
+<link rel="shortcut icon" sizes="57x57" href="../img/favicon/57x57.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/57x57.png" />
+<link rel="shortcut icon" sizes="72x72" href="../img/favicon/72x72.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/72x72.png" />
+<link rel="shortcut icon" sizes="114x114" href="../img/favicon/114x114.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/114x114.png" />
+<link rel="shortcut icon" sizes="144x144" href="../img/favicon/144x144.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/144x144.png" />
+<link rel="shortcut icon" sizes="196x196" href="../img/favicon/196x196.png" />
+<link rel="apple-touch-icon" sizes="196x196" href="../img/favicon/196x196.png" />
+<script>var is_default = false;</script>
+<script src="https://s.mts-online.com/u0729/api.js"></script>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/datepicker.css" />
+<link rel="stylesheet" href="../css/swiper.css" />
+<link rel="stylesheet" href="../js/fancybox/jquery.fancybox.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/fancybox/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/functions.js"></script>
+<link rel="stylesheet" href="https://www.internetservice.it/cookies/is_cookies.css" media="print" onload="this.media='all'">
+<script defer src="https://www.internetservice.it/cookies/is_cookies.js?lang=en"></script>
+
+<!-- Google Tag Manager -->
+<script type="text/plain" data-cookiecategory="analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD2T628');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript" type="text/plain" data-cookiecategory="analytics">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '079f896632dfab113bb6cc06aaf27524bbe5be5e';
+window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+
+<link rel="stylesheet" href="../pop/pop.css" />
+<script>
+	$(document).ready(function() {
+		$(".hp_pop").on("click", function() {
+			$(".hp_pop").css('display','none');
+		});
+	});
+</script>
+</head>
+
+<body class="index  ">
+<div class="header transition">
+	<a href="Default.asp"><div class="logo transition">
+        <img src="../img/layout/logo.svg" class="logo-1 transition" alt="Dolce Casa" title="Dolce Casa" />
+        <img src="../img/layout/logo-2.svg" class="logo-2 transition" alt="Dolce Casa" title="Dolce Casa" />
+    </div></a>
+	<a href="Default.asp"><img src="../img/layout/logo-4.svg" class="logo-4" alt="Dolce Casa" title="Dolce Casa" /></a>
+    <div class="button_menu">
+        <span class="line transition line1"></span>
+        <span class="line transition line2"></span>
+        <span class="line transition line3"></span>
+    </div>
+    <div class="navigation transition">
+    	<ul class="menu-wrapper">
+            <li id="menu_item_2" class="with_sub "><a href="resort.asp" id="m02">Resort</a>
+				<div class="nav transition">
+					<div class="nav_container">
+						<div class="nav-img"></div>
+						<div class="nav-bg"></div>
+						<div class="nav-inner">
+							<ul class="nav-in">
+								<li class=""><a href="philosophy.asp"><span class="nav-title">Philosophy</span></a></li>
+								<li class=""><a href="environments.asp"><span class="nav-title">Ambience</span></a></li>
+								<li class=""><a href="culinary.asp"><span class="nav-title">Cuisine</span></a></li>
+								<li class=""><a href="photo-gallery.asp"><span class="nav-title">Photo gallery</span></a></li>
+								<li class=""><a href="discovery-the-dolomites.asp"><span class="nav-title">Discover the Dolomites</span></a></li>
+								<li class=""><a href="position.asp"><span class="nav-title">Position</span></a></li>
+							</ul>
+						</div>
+					</div>			
+				</div>			
+				<div class="open_sub"></div>				
+			</li>
+            <li id="menu_item_3" class="with_sub "><a href="children-babies.asp" id="m03">Children &amp; Babies</a>
+				<div class="nav transition">
+					<div class="nav_container">
+						<div class="nav-img"></div>
+						<div class="nav-bg"></div>
+						<div class="nav-inner">
+							<ul class="nav-in">
+								<li class=""><a href="tina-land.asp"><span class="nav-title">Tina Land</span></a></li>
+								<li class=""><a href="tina-baby.asp"><span class="nav-title">Tina Baby</span></a></li>
+								<li class=""><a href="tina-mini.asp"><span class="nav-title">Tina Mini</span></a></li>
+								<li class=""><a href="tina-junior.asp"><span class="nav-title">Tina Junior</span></a></li>
+								<li class=""><a href="tina-ski.asp"><span class="nav-title">Tina Ski</span></a></li>
+							</ul>
+						</div>
+					</div>			
+				</div>			
+				<div class="open_sub"></div>				
+			</li>
+            <li id="menu_item_4" class="with_sub "><a href="family-parents.asp" id="m04">Family &amp; Parents</a>
+				<div class="nav transition">
+					<div class="nav_container">
+						<div class="nav-img"></div>
+						<div class="nav-bg"></div>
+						<div class="nav-inner">
+							<ul class="nav-in">
+								<li class=""><a href="family.asp"><span class="nav-title">For the whole family</span></a></li>
+								<li class=""><a href="adults.asp"><span class="nav-title">For adults</span></a></li>
+							</ul>
+						</div>
+					</div>			
+				</div>			
+				<div class="open_sub"></div>				
+			</li>
+            <li id="menu_item_5" class="with_sub "><a href="spa.asp" id="m05">Spa</a>
+				<div class="nav transition">
+					<div class="nav_container">
+						<div class="nav-img"></div>
+						<div class="nav-bg"></div>
+						<div class="nav-inner">
+							<ul class="nav-in">
+								<li class=""><a href="swimming-pools.asp"><span class="nav-title">Swimming pools</span></a></li>
+								<li class=""><a href="saunas-relaxation-area.asp"><span class="nav-title">Saunas &amp; relaxation area</span></a></li>
+								<li class=""><a href="beauty.asp"><span class="nav-title">Beauty</span></a></li>
+							</ul>
+						</div>
+					</div>			
+				</div>	
+				<div class="open_sub"></div>				
+			</li>
+            <li id="menu_item_6" class=""><a href="super-inclusive.asp">All Inclusive</a></li>
+            <li id="menu_item_7" class="with_sub "><a href="your-vacantion.asp" id="m06">Your vacation</a>
+				<div class="nav transition">
+					<div class="nav_container">
+						<div class="nav-img"></div>
+						<div class="nav-bg"></div>
+						<div class="nav-inner">
+							<ul class="nav-in">
+								<li class=""><a href="rooms-suites.asp"><span class="nav-title">Rooms &amp; suites</span></a></li>
+								<!--<li class=""><a href="price.asp"><span class="nav-title">Prices</span></a></li>-->
+								<li class=""><a href="offers-packages.asp"><span class="nav-title">Offers &amp; packages</span></a></li>
+								<li class=""><a href="general-conditions.asp"><span class="nav-title">General conditions</span></a></li>
+                                <li class=""><a href="for-your-safety.asp"><span class="nav-title">For your safety</span></a></li>
+							</ul>
+						</div>
+					</div>			
+				</div>	
+				<div class="open_sub"></div>
+			</li>
+        </ul>
+    </div>
+    <div class="info">
+    	<div class="contact">
+        	<a href="tel:+39 0462 573126"><img src="../img/layout/tel.svg" class="con-1" /><img src="../img/layout/tel-2.svg" class="con-2" /></a>
+        	<!--<a href="mailto:info@dolcecasa.it"><img src="../img/layout/mail.svg" class="con-1" /><img src="../img/layout/mail-2.svg" class="con-2" /></a>-->
+        </div>
+        <div class="language language-1 transition">
+			<img src="../img/layout/arrow-right.png" /><span>en</span>
+<div class="lang-other">
+    <a href="../it/">It</a>
+    <a href="../de/">De</a>
+</div>
+
+         </div>
+    </div>
+</div>
+
+<img src="../img/layout/family.svg" class="family" />
+<!--<a href="for-your-safety.asp" class="safety-sticker-a"><img src="../img/layout/safety.svg" class="safety-sticker" /></a>-->
+ <!--<a href="new.asp"> 
+    <img src="../img/novita.svg" class="new" />
+</a>-->
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD2T628"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Facebook Pixel Code -->
+<script type="text/plain" data-cookiecategory="analytics">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1355216528162887');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1355216528162887&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<div class="slide " id="slide">
+    <div class="sezione_slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+<div class="swiper-slide" style="background-image:url('../img/db/b_crop/20230710164213.jpg');"><div class="shadow-top"></div><div class="shadow-middle"></div><div class="shadow-bottom"></div><div class="slider_slogan" style=""></div></div>
+<div class="swiper-slide" style="background-image:url('../img/db/b_crop/20230327121105.jpg');"><div class="shadow-top"></div><div class="shadow-middle"></div><div class="shadow-bottom"></div><div class="slider_slogan" style=""></div></div>
+<div class="swiper-slide" style="background-image:url('../img/db/b_crop/20230710164154.jpg');"><div class="shadow-top"></div><div class="shadow-middle"></div><div class="shadow-bottom"></div><div class="slider_slogan" style=""></div></div>
+<div class="swiper-slide" style="background-image:url('../img/db/b_crop/20211007102818.jpg');"><div class="shadow-top"></div><div class="shadow-middle"></div><div class="shadow-bottom"></div><div class="slider_slogan" style="">Relax</div></div>
+            </div>
+        </div>
+        <div class="pag-box"><div class="swiper-pagination"></div></div>
+    </div>
+</div>
+<div class="top">
+	<div class="top-bottom">
+    	<div class="scroll">
+        	<a href="#"><img src="../img/layout/arrow-left.svg" class="arrow-left" /></a>
+        	<a href="#"><img src="../img/layout/arrow-right.svg" class="arrow-right" /></a>
+        	<a href="#main"><span class="scroll-title">Scroll</span>
+        	<img src="../img/layout/arrow.svg" class="scroll-sub" /></a>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/390462573126" target="_blank"><img src="../img/layout/whatsapp.png" class="whatsapp" /></a>
+	
+	
+<!--<div class="hp_pop">
+	<div class="hp_pop_window">
+		<img src="../pop/close_w.png" class="popclose" />
+		<div class="hp_pop_text">
+			<img src="../pop/pop.jpg" class="pop-img" />
+			<div class="pop_title">Book your white week safe and carefree&hellip;</div>
+			<p>The insurance is included for a weekly stay.<br />
+            The offer is valid from 9th January to 20th February.</p>
+			<div class="buttons">
+				<a href="https://www.dolcecasa.it/en/request.asp?smts-checkin=&smts-checkout=&smts-adults=2" target="_blank">Request offer</a>
+			</div>
+		</div>
+	</div>
+</div>-->
+
+<div class="main main-default" id="main">
+	<div class="content">
+    	<div class="article-bg">
+            <img src="../img/layout/article-bg-1.svg" class="article-bg-1" />
+            <img src="../img/layout/article-bg-2.svg" class="article-bg-2" />
+        </div>
+        <div class="article">
+        	<h1 class="h1">Resort Dolce Casa - Family &amp; SPA</h1>
+            <span class="slogan">Family holiday</span>
+            <div class="article-con">
+            	<div class="con-left">
+                	<p>Welcome to our happy family island!<br />
+  A holiday at the Dolce Casa Family Resort &amp; Spa means spending a wonderful time with the most important people in your life: your family.<br /><br />Our premier Family Hotel in the Val di Fassa is in the charming town of Moena, known as the <a href="discovery-the-dolomites.asp">&ldquo;Fairy of the Dolomites&rdquo;</a>; we are situated in a <a href="position.asp">quiet area</a>, but within easy reach of the centre. We are surrounded by some of the most evocative mountain groups in the Dolomites, including the Catinaccio, Monzoni and Latemar. Our resort offers a friendly and <a href="environments.asp">pleasant environment</a> for families, with large <a href="rooms-suites.asp">rooms and suites</a> with balconies and scenic views.</p>
+                </div>
+            	<div class="con-right">
+                	<p>The <a href="super-inclusive.asp">&ldquo;all inclusive&rdquo; formula</a> at the Dolce Casa, the <a href="spa.asp">wellness centre</a> with indoor pools to suit the whole family, and the fantastic world of <a href="tina-land.asp">Tina Land</a> with our trained activity leaders, all ensure you a very special holiday with plenty of fun and relaxation.<br />
+  The Sottopietra family, all our staff, and our mascot Tina la Marmottina, will be happy to care for you and your children and give you a truly memorable holiday in the Trentino Dolomites!</p>
+                <div class="sign">
+            	<p>The</p>
+                <img src="../img/layout/sign-en.svg" />
+            </div>
+                </div>
+            </div>
+            <span class="ten-title">10 good reasons to choose us</span>
+            <ul class= "list">
+              <li>The Dolce Casa Family Resort &amp; Spa is all about family</li>
+              <li><a href="super-inclusive.asp">All-inclusive services</a> for a carefree holiday</li>
+              <li>Tina Land for children age 1 and upward, with supervision and activities 13 hours a day</li>
+              <li>Weekly Tina Baby, Mini and Junior programmes with assistants and professional entertainers</li>
+              <li>Swimming pools for children and adults and an exclusive spa for parents</li>
+              <li>Beauty centre with massages, treatments and pampering for mum and dad</li>
+              <li>Special Tina ski school</li>
+              <li>More free time for parents &ndash; to enjoy time together</li>
+              <li>Central location in Moena, near all the places of interest</li>
+              <li>Surrounded by the most beautiful mountains in the world: The UNESCO Dolomites</li>
+            	</ul>
+             
+                <img src="../img/layout/award.png" alt="Travelers Award" class="award">
+        </div>
+    </div>
+    
+    <div class="core-section">
+    
+    	<div class="core core-1">
+        	<div class="core-bg"></div>
+        	<div class="core-descr">
+                <div class="core-descr-in">
+                    <span class="core-title">Children<br /> &amp; Babies</span>
+                    <span class="core-sub">Only the best for our little guests!<br /> Our Tina Land programme offers a wide selection of activities, games and services for different age groups. The Dolce Casa has a carefully selected team of activity leaders, ready to entertain your children from morning to night.</span>
+                    <a href="children-babies.asp">More</a>
+                </div>
+            </div>
+            <div class="core-box"></div>
+            <div  class="core-img"><div><img src="../img/layout/desktop/kids.png" /></div></div>
+        </div>
+        
+    	<div class="core core-2">
+        	<div class="core-bg"></div>
+        	<div class="core-overlay"></div>
+        	<div class="core-descr">
+                <div class="core-descr-in">
+                    <span class="core-title">Wellness<br /> &amp; SPA</span>
+                    <span class="core-sub">While your children are having fun in Tina Land, you can give yourself a well-earned break, and enjoy the pleasures of our wellness centre and spa. We offer various different types of sauna, a swimming pool with Jacuzzi, and a huge choice of wellness treatments for all the family.</span>
+                    <a href="spa.asp">More</a>
+                </div>
+            </div>
+        </div>
+    
+    	<div class="core core-3">
+        	<div class="core-bg"></div>
+        	<div class="core-descr">
+                <div class="core-descr-in">
+                    <span class="core-title">Family<br /> &amp; Parents</span>
+                    <span class="core-sub">The best thing we offer at Dolce Casa is lots of time for your children. With our varied family programme, a holiday together will never be so good: a unique opportunity to experience the mountains and explore the beautiful Val di Fassa.</span>
+                    <a href="family-parents.asp">More</a>
+                </div>
+            </div>
+            <div class="core-box"></div>
+            <div  class="core-img"><div><img src="../img/layout/desktop/family.png" /></div></div>
+        </div>
+	
+    </div>
+    
+    <div class="key-section">
+    	<div class="key-bg"></div>
+    	<div class="key-inner">
+        	<div class="key-top">
+            	<span class="hr"></span><span class="key-top-title">Dolce Casa</span><span class="hr"></span>
+                <span class="key-top-sub">Your vacantion</span>
+            </div>
+        	
+            <div class="key-bottom">
+            	<a href="rooms-suites.asp"><div class="key key-1">
+                	<div class="key-hov-1"></div>
+                	<div class="key-hov-2"></div>
+                	<div class="key-in">
+                        <span class="key-title"><span class="key-box"></span><font>Rooms<br /> &amp; suites</font></span>
+                        <span class="key-sub"><span class="hr"></span>Spacious and comfortable</span>
+                        <p>Family rooms and communicating rooms, to meet all the needs of families with older or younger children.</p>
+                        <div class="key-img"><div class="key-over"></div></div>
+                    </div>
+                </div></a>
+				
+            	<a href="offers-packages.asp"><div class="key key-2-s">
+                
+                	<div class="key-hov-1"></div>
+                	<div class="key-hov-2"></div>
+                	<div class="key-in">
+                        <span class="key-title"><span class="key-box"></span><font>Prices &amp; offers</font></span>
+                        <span class="key-sub"><span class="hr"></span>Advantages for families</span>
+                        <p>Explore our top summer and winter offers, specially designed for you.</p>
+                        <div class="key-img"><div class="key-over"></div></div>
+                    </div>
+                </div></a>
+            	<a href="super-inclusive.asp"><div class="key key-3">
+                	<div class="key-hov-1"></div>
+                	<div class="key-hov-2"></div>
+                	<div class="key-in">
+                        <span class="key-title"><span class="key-box"></span><font>All<br /> inclusive</font></span>
+                        <span class="key-sub"><span class="hr"></span>Family-friendly services</span>
+                        <p>Take advantage of our All Inclusive Dolce Casa and All Inclusive Small formulas for your family holiday in Trentino.</p>
+                        <div class="key-img"><div class="key-over"></div></div>
+                    </div>
+                </div></a>
+            	<a href="price.asp"><div class="key key-4">
+                	<div class="key-hov-1"></div>
+                	<div class="key-hov-2"></div>
+                	<div class="key-in">
+                        <span class="key-title"><span class="key-box"></span><font>Best price<br /> guarantee</font></span>
+                        <span class="key-sub"><span class="hr"></span>Book now</span>
+                        <p>By booking directly on the Dolce Casa website, you are guaranteed the best possible price.</p>
+                        <div class="key-img"><div class="key-over"></div></div>
+                    </div>
+                </div></a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="request-section">
+    <div class="requ-bg"></div>
+    <div class="request-inner">
+    	<div class="requ-top">
+            <span class="hr"></span><span class="requ-top-title">Book at the best price</span><span class="hr"></span>
+            <span class="requ-top-sub">Check availability</span>
+        </div>
+        
+        <div class="requ-box">
+            <form class="quick-request" name="SmallForm" id="SmallForm" action="request.asp" method="post">
+                
+                <div class="qr-col">
+                    <div class="qr-row">
+                        <div class="qr-row-box" id="qr-row-box-1">
+                            <div class="qr-date-box">
+                            <div class="qr-date">17</div>
+                                <div class="qr-month">Giu</div>
+                            </div>
+                        </div>	
+                        <input type="text" id="TxtDal" name="TxtDal" class="TxtInput" value="" />
+                    </div>							
+                </div>
+                
+                <div class="qr-col">
+                    <div class="qr-row">
+                        <div class="qr-row-box" id="qr-row-box-2">
+                            <div class="qr-date-box">
+                            <div class="qr-date">21</div>
+                                <div class="qr-month">Giu</div>
+                            </div>
+                        </div>	
+                        <input type="text" id="TxtAl" name="TxtAl" class="TxtInput" value="" />
+                    </div>							
+                </div>
+            
+                <div class="qr-col qr-3">
+                    <button type="button" class="qr-row-big transition" onclick="Javascript:send_request('en');">Request</button>
+                    <a href="https://booking.dolcecasa.it/?skd-language-code=en" class="book-bt transition" target="_blank">Book</a>
+                </div>
+                
+            </form>
+        </div>
+        <br />
+<br />
+<br />
+
+    	<div class="requ-top">
+            <span class="hr"></span><span class="requ-top-title">Your vacation</span><span class="hr"></span>
+            <a href="offers-packages.asp" class="offer-button"><span class="requ-top-sub">Offers &amp; packages</span></a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="footer">
+	
+	<div class="news-con">
+		<iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://0g0jt.mjt.lu/wgt/0g0jt/1up/form?c=d2033a82" width="100%"></iframe> <script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
+	</div>
+	
+	<img src="../img/layout/mascotte.png" class="groundhog-3" />
+    <div class="footer-inner">
+        <div class="footer-box box-1">
+            <img src="../img/layout/logo-3.svg" class="logo-3" />
+        </div>
+        <div class="footer-box box-2">
+            <span class="footer-title">Position</span>
+            <span class="hr"></span>
+            <p>Resort Dolce Casa<br />
+			Family &amp; SPA****<br />
+            Str. G. Kostner | 38035 Moena<br />
+            Val di Fassa | Dolomites (TN) | Italy</p>
+        </div>
+        <div class="footer-box box-3">
+            <span class="footer-title">Contact</span>
+            <span class="hr"></span>
+            <p>Tel. +39 0462 573126<br />
+            <a href="mailto:info@dolcecasa.it">info@dolcecasa.it</a><br />
+            <a href="https://www.dolcecasa.it/" target="_blank">www.dolcecasa.it</a></p>
+        </div>
+        <div class="footer-box box-4">
+            <span class="footer-title">Follow us</span>
+            <span class="hr"></span>
+            <div class="social">
+                <a href="https://www.facebook.com/resortdolcecasa" target="_blank"><img src="../img/layout/social-1.svg" /></a>
+                <a href="https://www.instagram.com/resortdolcecasafamily_spa/" target="_blank"><img src="../img/layout/social-2.svg" /></a>
+                <a href="https://www.youtube.com/channel/UCOCkWn4TjqMQdLBTOp9YMxg" target="_blank"><img src="../img/layout/social-3.svg" /></a>
+            </div>
+            <div class="language language-2 transition">
+                <img src="../img/layout/arrow-right.png" /><span>De</span>
+                <div class="lang-other">
+                    <a href="">It</a>
+                    <a href="">En</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <div class="partner">
+        <div class="par">
+            <img src="../img/layout/partner-1.png" class="par-1" /><img src="../img/layout/par-1.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-2.png" class="par-1" /><img src="../img/layout/par-2.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-3.png" class="par-1" /><img src="../img/layout/par-3.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-4.png" class="par-1" /><img src="../img/layout/par-4.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-5.png" class="par-1" /><img src="../img/layout/par-5.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-6.png" class="par-1" /><img src="../img/layout/par-6.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-7.png" class="par-1" /><img src="../img/layout/par-7.png" class="par-2" />
+        </div>
+        <div class="par">
+            <img src="../img/layout/partner-8.png" class="par-1" /><img src="../img/layout/par-8.png" class="par-2" />
+        </div>
+    </div>
+</div>
+
+<div class="footer-bot">
+	<p><span>VAT: 00333590222</span>&middot;<span>CIN: IT022118A1B2CRHSGY</span>&middot;<span><span><a href="jobs.asp">Apply for a job</a></span>&middot;<span><a href="impressum.asp">Impressum</a></span>&middot;<span>Produced by <a href="https://www.internetservice.it/" target="_blank"><img src="../img/layout/internetservice-2.svg" /></a></span></p>
+</div>
+
+<!-- S-MTS Buchen-Button (Deutsch) -->
+<div class="booking-widget-cont">
+    <div data-smts-user="u0729"
+    data-smts-language="en"
+    data-smts-view="bookingbar"
+    data-smts-target-booking="/en/online-booking.asp"
+    data-smts-target-request="/en/request.asp"></div>
+</div>
+    
+	
+
+</body>
+</html>
