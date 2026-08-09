@@ -13,7 +13,8 @@
     }).addTo(map);
 
     var CAT_COLORS = {
-      smaller: '#ff5a4e', midrange: '#ec5aa8', luxury: '#ffa617', mountains: '#16b28a', unique: '#8b5cf6'
+      smaller: '#ff5a4e', midrange: '#ec5aa8', luxury: '#ffa617', mountains: '#16b28a', unique: '#8b5cf6', extra: '#2f9ce8',
+      horeca_be: '#ec5aa8', horeca_eur: '#ffa617', frituren_be: '#ff5a4e'
     };
     var CAT_LABELS = {
       smaller: 'Kleinschalig', midrange: 'Middenklasse', luxury: 'Luxe resorts', mountains: 'Bergvakanties', unique: 'Bijzonder'
@@ -50,18 +51,22 @@
       var popup =
         '<div class="popup-name">' + esc(d.naam) + '</div>' +
         '<div class="popup-loc">' + esc(d.land) + (d.plaats ? ' &middot; ' + esc(d.plaats) : '') + '</div>' +
-        '<a href="' + rel + 'hotels/' + esc(d.slug) + '.html">Bekijk pagina &rarr;</a>';
+        '<a href="' + rel + (d.kind === 'eten' ? 'eten/' : 'hotels/') + esc(d.slug) + '.html">Bekijk pagina &rarr;</a>';
       marker.bindPopup(popup);
       clusterGroups[cat].addLayer(marker);
       bounds.push([d.lat, d.lon]);
     });
 
+    var checkboxes = document.querySelectorAll('.map-legend input[type="checkbox"]');
+    var checkedCats = {};
+    checkboxes.forEach(function(cb){ checkedCats[cb.dataset.cat] = cb.checked; });
+
     Object.keys(clusterGroups).forEach(function(cat){
-      map.addLayer(clusterGroups[cat]);
+      if(checkedCats[cat] !== false){ map.addLayer(clusterGroups[cat]); }
     });
     if(bounds.length){ map.fitBounds(bounds, {padding: [30, 30], maxZoom: 6}); }
 
-    document.querySelectorAll('.map-legend input[type="checkbox"]').forEach(function(cb){
+    checkboxes.forEach(function(cb){
       cb.addEventListener('change', function(){
         var cat = cb.dataset.cat;
         var group = clusterGroups[cat];

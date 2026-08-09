@@ -13,6 +13,7 @@
   --gold: #ffa617;
   --pine: #16b28a;
   --violet: #8b5cf6;
+  --sky: #2f9ce8;
   --maxw: 1360px;
 }
 
@@ -134,6 +135,7 @@ button{font-family:inherit;}
 .toc-cat-gold{color:var(--gold); border-color:var(--gold);}
 .toc-cat-pine{color:var(--pine); border-color:var(--pine);}
 .toc-cat-violet{color:var(--violet); border-color:var(--violet);}
+.toc-cat-sky{color:var(--sky); border-color:var(--sky);}
 .toc-list{list-style:none; margin:0; padding:0; columns:2; column-gap:1.5rem;}
 .toc-list li{break-inside:avoid; margin-bottom:.4rem;}
 .toc-list a{display:flex; gap:.4rem; align-items:baseline; text-decoration:none; font-size:.84rem; color:var(--ink);}
@@ -146,7 +148,10 @@ button{font-family:inherit;}
 .category-head{padding:3rem 0 1.75rem;}
 .category-tag{font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;}
 .category-tag-clay{color:var(--clay);} .category-tag-plum{color:var(--plum);} .category-tag-gold{color:var(--gold);}
-.category-tag-pine{color:var(--pine);} .category-tag-violet{color:var(--violet);}
+.category-tag-pine{color:var(--pine);} .category-tag-violet{color:var(--violet);} .category-tag-sky{color:var(--sky);}
+.detail-tag.category-tag-sky{color:var(--sky);}
+.mama-credit{display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; background:var(--chip-bg); color:var(--chip-text); padding:.3rem .6rem; border-radius:100px; text-decoration:none;}
+.mama-credit::before{content:"\1F4CD";}
 .category-title{font-size:2rem; margin-top:.4rem;}
 .category-blurb{color:var(--ink-soft); margin-top:.6rem; max-width:34rem; font-size:.98rem;}
 .category-count{font-size:.75rem; color:var(--ink-soft); display:inline-block; margin-top:.5rem; font-weight:600;}
@@ -164,6 +169,7 @@ button{font-family:inherit;}
 .ph-gold{background:linear-gradient(135deg,#ffa617,#ffc966);}
 .ph-pine{background:linear-gradient(135deg,#16b28a,#4dd0ab);}
 .ph-violet{background:linear-gradient(135deg,#8b5cf6,#b39dfa);}
+.ph-sky{background:linear-gradient(135deg,#2f9ce8,#6ec1f5);}
 .card-num{position:absolute; bottom:.5rem; right:.5rem; background:rgba(23,27,31,.72); color:#fff; font-size:.68rem; padding:.22rem .5rem; border-radius:100px; backdrop-filter:blur(2px);}
 .card-body{padding:1.1rem 1.15rem 1.2rem; display:flex; flex-direction:column; gap:.7rem; flex:1;}
 .card-name-link{text-decoration:none; color:inherit;}
@@ -270,6 +276,7 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
 .map-legend{display:flex; flex-wrap:wrap; gap:.6rem; max-width:var(--maxw); margin:1rem auto 0; padding:0 1.75rem;}
 .map-legend label{display:flex; align-items:center; gap:.4rem; font-size:.8rem; background:var(--card); border:1px solid var(--line); padding:.35rem .7rem; border-radius:100px; cursor:pointer;}
 .map-legend .dot{width:.6rem; height:.6rem; border-radius:100px; display:inline-block;}
+.map-legend-sep{display:flex; align-items:center; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); font-weight:700; padding:.35rem 0 .35rem .5rem;}
 #map{width:100%; height:74vh; min-height:420px; margin-top:1.25rem; border-top:1px solid var(--line);}
 .leaflet-popup-content{font-family:inherit; font-size:.85rem;}
 .leaflet-popup-content .popup-name{font-weight:800; margin-bottom:.2rem;}

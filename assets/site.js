@@ -98,7 +98,8 @@
       }},
       {label:'Pagina', get:function(d){
         var prefix = window.SITE_REL || '';
-        return '<a href="' + prefix + 'hotels/' + esc(d.slug) + '.html">Bekijk detailpagina &rarr;</a>';
+        var folder = d.kind === 'eten' ? 'eten/' : 'hotels/';
+        return '<a href="' + prefix + folder + esc(d.slug) + '.html">Bekijk detailpagina &rarr;</a>';
       }}
     ];
     var head = '<tr><th class="row-label"></th>' + nums.map(function(n){

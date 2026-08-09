@@ -52,7 +52,8 @@
         section.style.display = sectionHasVisible ? '' : 'none';
       });
 
-      resultCount.textContent = visibleCount + ' van ' + cards.length + ' verblijven';
+      var unitLabel = document.body.dataset.unit || 'resultaten';
+      resultCount.textContent = visibleCount + ' van ' + cards.length + ' ' + unitLabel;
       noResults.classList.toggle('show', visibleCount === 0);
     }
 
