@@ -133,5 +133,28 @@
 
     applyFavClasses();
     updateCompareBar();
+
+    var navToggle = document.getElementById('navToggle');
+    var siteNav = document.getElementById('siteNav');
+    if(navToggle && siteNav){
+      function closeNav(){
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+      function toggleNav(){
+        var isOpen = siteNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+      navToggle.addEventListener('click', function(e){ e.stopPropagation(); toggleNav(); });
+      siteNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+      document.addEventListener('click', function(e){
+        if(siteNav.classList.contains('open') && !siteNav.contains(e.target) && e.target !== navToggle){
+          closeNav();
+        }
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') closeNav();
+      });
+    }
   });
 })();
