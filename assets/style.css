@@ -1,18 +1,18 @@
 :root{
-  --paper: #faf9f6;
+  --paper: #fffaf0;
   --card: #ffffff;
-  --ink: #171b1f;
-  --ink-soft: #5b6470;
-  --accent: #0e7c7b;
-  --accent-warm: #f2703a;
-  --line: #e6e2d8;
-  --chip-bg: #f0ede3;
-  --chip-text: #3a3d33;
-  --clay: #a24e36;
-  --plum: #6b4c63;
-  --gold: #b8862e;
-  --pine: #1e6b52;
-  --violet: #5b4b8a;
+  --ink: #21252b;
+  --ink-soft: #667085;
+  --accent: #00a99a;
+  --accent-warm: #ff5a4e;
+  --line: #f0e6d2;
+  --chip-bg: #fdf0dd;
+  --chip-text: #6b4a1f;
+  --clay: #ff5a4e;
+  --plum: #ec5aa8;
+  --gold: #ffa617;
+  --pine: #16b28a;
+  --violet: #8b5cf6;
   --maxw: 1360px;
 }
 
@@ -67,17 +67,47 @@ button{font-family:inherit;}
 }
 .nav-fav-pill[hidden]{display:none;}
 
-/* ---------- Cover ---------- */
-.cover{max-width:var(--maxw); margin:0 auto; padding:4rem 1.75rem 3rem; border-bottom:1px solid var(--line); position:relative;}
-.cover-motif{position:absolute; top:2rem; right:1.75rem; width:150px; height:150px; z-index:0;}
-.cover-inner{position:relative; z-index:1; max-width:34rem;}
-.cover-eyebrow{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 1rem;}
-.cover-title{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.03;}
-.cover-sub{margin:1.4rem 0 0; font-size:1.05rem; color:var(--ink-soft); max-width:32rem;}
-.cover-cats{display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1.75rem;}
-.cover-cats span{font-size:.72rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:.4rem .8rem; border-radius:100px; background:var(--card); border:1px solid var(--line); color:var(--ink-soft);}
-.cover-meta{margin-top:2rem; font-size:.8rem; color:var(--ink-soft);}
+/* ---------- Cover / hero landing ---------- */
+.cover{
+  position:relative; overflow:hidden;
+  min-height:100svh; min-height:100vh;
+  display:flex; align-items:center;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(circle at 85% 12%, rgba(255,166,23,.16), transparent 40%),
+    radial-gradient(circle at 92% 55%, rgba(0,169,154,.14), transparent 38%),
+    radial-gradient(circle at 78% 85%, rgba(255,90,78,.13), transparent 42%),
+    var(--paper);
+}
+.cover-motif{position:absolute; top:6vh; right:-2rem; width:min(46vw,420px); height:min(46vw,420px); z-index:0; opacity:.9;}
+.cover-inner{position:relative; z-index:1; max-width:36rem; padding:6.5rem 1.75rem 5rem; margin:0 auto; width:100%;}
+.cover-eyebrow{font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--pine); font-weight:800; margin:0 0 1.1rem; display:flex; align-items:center; gap:.5rem;}
+.cover-eyebrow::before{content:"";width:1.6rem; height:2px; background:var(--accent-warm); display:inline-block;}
+.cover-title{font-size:clamp(2.6rem,6.5vw,4.2rem); line-height:1.02;}
+.cover-sub{margin:1.5rem 0 0; font-size:1.14rem; color:var(--ink-soft); max-width:32rem;}
+.cover-cta{display:flex; flex-wrap:wrap; gap:.85rem; margin-top:2.25rem;}
+.cta-primary, .cta-secondary{
+  font-size:.92rem; font-weight:800; text-decoration:none; padding:.9rem 1.5rem; border-radius:100px;
+  display:inline-flex; align-items:center; gap:.5rem; transition:transform .15s, box-shadow .15s;
+}
+.cta-primary{background:var(--accent-warm); color:#fff; box-shadow:0 10px 24px -8px rgba(255,90,78,.55);}
+.cta-primary:hover{transform:translateY(-2px); box-shadow:0 14px 28px -8px rgba(255,90,78,.6);}
+.cta-secondary{background:var(--card); color:var(--ink); border:1px solid var(--line);}
+.cta-secondary:hover{transform:translateY(-2px); border-color:var(--accent);}
+.cover-meta{margin-top:2.25rem; font-size:.82rem; color:var(--ink-soft);}
 .cover-meta strong{color:var(--ink); font-weight:700;}
+.scroll-cue{
+  position:absolute; left:50%; bottom:1.75rem; transform:translateX(-50%); z-index:1;
+  display:flex; flex-direction:column; align-items:center; gap:.4rem; text-decoration:none;
+  color:var(--ink-soft); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+}
+.scroll-cue svg{animation:bob 1.8s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+@media (prefers-reduced-motion: reduce){.scroll-cue svg{animation:none;}}
+@media (max-width:640px){
+  .cover-inner{padding-top:5.5rem; padding-bottom:4rem;}
+  .cover-motif{width:70vw; height:70vw; top:2vh; right:-3rem; opacity:.7;}
+}
 
 /* ---------- Intro / country bars ---------- */
 .intro, .countries{max-width:var(--maxw); margin:0 auto; padding:2.75rem 1.75rem; border-bottom:1px solid var(--line);}
@@ -129,11 +159,11 @@ button{font-family:inherit;}
 .card-photo{position:relative; aspect-ratio:4/3; background:var(--chip-bg); overflow:hidden;}
 .card-photo img{width:100%; height:100%; object-fit:cover;}
 .card-photo-placeholder{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:2.6rem; font-weight:800; color:#fff;}
-.ph-clay{background:linear-gradient(135deg,#a24e36,#c46a4d);}
-.ph-plum{background:linear-gradient(135deg,#6b4c63,#8b6683);}
-.ph-gold{background:linear-gradient(135deg,#b8862e,#d6a446);}
-.ph-pine{background:linear-gradient(135deg,#1e6b52,#2e8c6d);}
-.ph-violet{background:linear-gradient(135deg,#5b4b8a,#7a67ad);}
+.ph-clay{background:linear-gradient(135deg,#ff5a4e,#ff8a6a);}
+.ph-plum{background:linear-gradient(135deg,#ec5aa8,#f68bc4);}
+.ph-gold{background:linear-gradient(135deg,#ffa617,#ffc966);}
+.ph-pine{background:linear-gradient(135deg,#16b28a,#4dd0ab);}
+.ph-violet{background:linear-gradient(135deg,#8b5cf6,#b39dfa);}
 .card-num{position:absolute; bottom:.5rem; right:.5rem; background:rgba(23,27,31,.72); color:#fff; font-size:.68rem; padding:.22rem .5rem; border-radius:100px; backdrop-filter:blur(2px);}
 .card-body{padding:1.1rem 1.15rem 1.2rem; display:flex; flex-direction:column; gap:.7rem; flex:1;}
 .card-name-link{text-decoration:none; color:inherit;}
@@ -177,6 +207,7 @@ button{font-family:inherit;}
 
 /* ---------- Compare bar + modal ---------- */
 .comparebar{position:fixed; left:50%; transform:translateX(-50%); bottom:1.1rem; z-index:60; background:var(--ink); color:#fff; border-radius:100px; padding:.55rem .55rem .55rem 1.1rem; display:flex; align-items:center; gap:.7rem; box-shadow:0 8px 24px rgba(0,0,0,.28); font-size:.82rem;}
+.comparebar[hidden]{display:none;}
 .comparebar button{font:inherit; font-size:.78rem; font-weight:700; border:none; border-radius:100px; cursor:pointer; padding:.5rem 1rem;}
 #compareOpenBtn{background:var(--accent-warm); color:#fff;}
 #compareClearBtn{background:transparent; color:#fff; opacity:.7;}

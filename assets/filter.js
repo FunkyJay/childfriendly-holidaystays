@@ -5,6 +5,7 @@
 
     var categoryFilter = document.getElementById('categoryFilter');
     var countryFilter = document.getElementById('countryFilter');
+    var capacityFilter = document.getElementById('capacityFilter');
     var favOnlyToggle = document.getElementById('favOnlyToggle');
     var resultCount = document.getElementById('resultCount');
     var noResults = document.getElementById('noResults');
@@ -14,6 +15,7 @@
       var q = searchInput.value.trim().toLowerCase();
       var cat = categoryFilter.value;
       var country = countryFilter.value;
+      var minCapacity = capacityFilter && capacityFilter.value ? parseInt(capacityFilter.value, 10) : 0;
       var favOnly = favOnlyToggle.checked;
       var favs = window.SITE_FAVS || new Set();
       var visibleCount = 0;
@@ -24,6 +26,7 @@
         if(q && card.dataset.search.indexOf(q) === -1) matches = false;
         if(cat && card.dataset.category !== cat) matches = false;
         if(country && card.dataset.land !== country) matches = false;
+        if(minCapacity && parseInt(card.dataset.capacity, 10) < minCapacity) matches = false;
         if(favOnly && !favs.has(num)) matches = false;
         card.style.display = matches ? '' : 'none';
         if(matches) visibleCount++;
@@ -57,9 +60,12 @@
     categoryFilter.addEventListener('change', runFilter);
     countryFilter.addEventListener('change', runFilter);
     favOnlyToggle.addEventListener('change', runFilter);
+    if(capacityFilter) capacityFilter.addEventListener('change', runFilter);
     var resetBtn = document.getElementById('filterResetBtn');
     if(resetBtn) resetBtn.addEventListener('click', function(){
-      searchInput.value = ''; categoryFilter.value = ''; countryFilter.value = ''; favOnlyToggle.checked = false;
+      searchInput.value = ''; categoryFilter.value = ''; countryFilter.value = '';
+      if(capacityFilter) capacityFilter.value = '';
+      favOnlyToggle.checked = false;
       runFilter();
     });
 

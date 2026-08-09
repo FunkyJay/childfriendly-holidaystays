@@ -13,7 +13,7 @@
     }).addTo(map);
 
     var CAT_COLORS = {
-      smaller: '#a24e36', midrange: '#6b4c63', luxury: '#b8862e', mountains: '#1e6b52', unique: '#5b4b8a'
+      smaller: '#ff5a4e', midrange: '#ec5aa8', luxury: '#ffa617', mountains: '#16b28a', unique: '#8b5cf6'
     };
     var CAT_LABELS = {
       smaller: 'Kleinschalig', midrange: 'Middenklasse', luxury: 'Luxe resorts', mountains: 'Bergvakanties', unique: 'Bijzonder'
