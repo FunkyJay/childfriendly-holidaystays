@@ -13,7 +13,7 @@
     }).addTo(map);
 
     var CAT_COLORS = {
-      smaller: '#ff5a4e', midrange: '#ec5aa8', luxury: '#ffa617', mountains: '#16b28a', unique: '#8b5cf6', extra: '#2f9ce8',
+      smaller: '#ff5a4e', midrange: '#ec5aa8', luxury: '#ffa617', mountains: '#16b28a', unique: '#8b5cf6', extra: '#2f9ce8', eigen: '#5c8a3a',
       horeca_be: '#ec5aa8', horeca_eur: '#ffa617', frituren_be: '#ff5a4e'
     };
     var CAT_LABELS = {

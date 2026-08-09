@@ -14,6 +14,7 @@
   --pine: #16b28a;
   --violet: #8b5cf6;
   --sky: #2f9ce8;
+  --moss: #5c8a3a;
   --maxw: 1360px;
 }
 
@@ -146,6 +147,7 @@ button{font-family:inherit;}
 .toc-cat-pine{color:var(--pine); border-color:var(--pine);}
 .toc-cat-violet{color:var(--violet); border-color:var(--violet);}
 .toc-cat-sky{color:var(--sky); border-color:var(--sky);}
+.toc-cat-moss{color:var(--moss); border-color:var(--moss);}
 .toc-list{list-style:none; margin:0; padding:0; columns:2; column-gap:1.5rem;}
 .toc-list li{break-inside:avoid; margin-bottom:.4rem;}
 .toc-list a{display:flex; gap:.4rem; align-items:baseline; text-decoration:none; font-size:.84rem; color:var(--ink);}
@@ -158,10 +160,13 @@ button{font-family:inherit;}
 .category-head{padding:3rem 0 1.75rem;}
 .category-tag{font-size:.75rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700;}
 .category-tag-clay{color:var(--clay);} .category-tag-plum{color:var(--plum);} .category-tag-gold{color:var(--gold);}
-.category-tag-pine{color:var(--pine);} .category-tag-violet{color:var(--violet);} .category-tag-sky{color:var(--sky);}
+.category-tag-pine{color:var(--pine);} .category-tag-violet{color:var(--violet);} .category-tag-sky{color:var(--sky);} .category-tag-moss{color:var(--moss);}
 .detail-tag.category-tag-sky{color:var(--sky);}
+.detail-tag.category-tag-moss{color:var(--moss);}
 .mama-credit{display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; background:var(--chip-bg); color:var(--chip-text); padding:.3rem .6rem; border-radius:100px; text-decoration:none;}
 .mama-credit::before{content:"\1F4CD";}
+.eigen-credit{background:rgba(92,138,58,.12); color:var(--moss);}
+.eigen-credit::before{content:"\1F50D";}
 .category-title{font-size:2rem; margin-top:.4rem;}
 .category-blurb{color:var(--ink-soft); margin-top:.6rem; max-width:34rem; font-size:.98rem;}
 .category-count{font-size:.75rem; color:var(--ink-soft); display:inline-block; margin-top:.5rem; font-weight:600;}
@@ -180,6 +185,7 @@ button{font-family:inherit;}
 .ph-pine{background:linear-gradient(135deg,#16b28a,#4dd0ab);}
 .ph-violet{background:linear-gradient(135deg,#8b5cf6,#b39dfa);}
 .ph-sky{background:linear-gradient(135deg,#2f9ce8,#6ec1f5);}
+.ph-moss{background:linear-gradient(135deg,#5c8a3a,#8fbf5f);}
 .card-num{position:absolute; bottom:.5rem; right:.5rem; background:rgba(23,27,31,.72); color:#fff; font-size:.68rem; padding:.22rem .5rem; border-radius:100px; backdrop-filter:blur(2px);}
 .card-body{padding:1.1rem 1.15rem 1.2rem; display:flex; flex-direction:column; gap:.7rem; flex:1;}
 .card-name-link{text-decoration:none; color:inherit;}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bar Brial in België: Leuke overdekte ruimte, met grote buitenruimte waar hapjes en drankjes genuttigd kunnen worden.
+Er worden tal van familie-activiteiten georg">
+<title>Bar Brial — Familiereisgids</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body data-unit="adressen">
+
+<header class="sitehead">
+  <div class="sitehead-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" stroke="#00a99a" stroke-width="2.5"/><path d="M21 11L17.5 17.5L11 21L14.5 14.5L21 11Z" fill="#ff5a4e"/></svg></span>
+      <span class="brand-name">Familiereisgids</span>
+    </a>
+    <nav class="sitenav" id="siteNav">
+      <a href="../index.html" class="">Verblijven</a>
+      <a href="../eten.html" class="">Uit eten</a>
+      <a href="../kaart.html" class="">Kaart</a>
+    </nav>
+    <div class="sitehead-actions">
+      <a class="nav-fav-pill" id="navFavPill" href="../index.html#compare-cta" hidden>&#9829; <span id="navFavCount">0</span></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="siteNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../eten.html">Uit eten</a> &rsaquo; <a href="../eten.html#cat-horeca_be">Horeca met speelruimte — België</a> &rsaquo; Bar Brial</div>
+<div class="detail-body">
+  <div>
+    <span class="detail-tag category-tag-plum">Horeca met speelruimte — België</span>
+    <h1 class="detail-title">Bar Brial</h1>
+    <p class="detail-loc">🇧🇪&nbsp;België &middot; Mortsel</p>
+    <p class="detail-desc">Leuke overdekte ruimte, met grote buitenruimte waar hapjes en drankjes genuttigd kunnen worden.
+Er worden tal van familie-activiteiten georganiseerd.</p>
+    <p class="detail-note">Aangedragen door <a href="https://linktr.ee/mamavindt" target="_blank" rel="noopener">@mamavindt</a> &mdash; niet zelfstandig onderzocht voor deze gids, check de website voor actuele info.</p>
+  </div>
+  <aside class="info-panel">
+    <button class="fav-btn fav-btn-lg" type="button" data-num="442" aria-pressed="false" aria-label="Bewaar Bar Brial als favoriet">&#9825; Bewaar dit adres</button>
+    <div class="info-row"><span class="label">Type</span><span class="value">Horeca met speelruimte</span></div>
+    <span class="weblink-none">Geen website bekend</span>
+    <div class="mini-map" id="miniMap" data-lat="51.1727984" data-lon="4.459051" data-name="Bar Brial"></div>
+  </aside>
+</div>
+<div class="detail-hero"><div class="gallery"><div class="gallery-main"><div class="gallery-placeholder ph-plum">B</div></div></div></div>
+
+<section class="related">
+  <h3>Meer horeca met speelruimte — belgië</h3>
+  <div class="grid">
+      <a class="card-name-link" href="../eten/371-t-frietoord.html">
+      <article class="card" data-num="371">
+        <div class="card-photo"><div class="card-photo-placeholder ph-plum">&#x27;</div><span class="card-num mono">0371</span></div>
+        <div class="card-body">
+          <div><h4 class="card-name">&#x27;T Frietoord</h4>
+          <p class="card-loc">🇧🇪&nbsp;België &middot; Lede</p></div>
+        </div>
+      </article></a>
+      <a class="card-name-link" href="../eten/372-t-hoevendrieske.html">
+      <article class="card" data-num="372">
+        <div class="card-photo"><img src="../images/hb-0002.jpg" alt="&#x27;T Hoevendrieske" loading="lazy"><span class="card-num mono">0372</span></div>
+        <div class="card-body">
+          <div><h4 class="card-name">&#x27;T Hoevendrieske</h4>
+          <p class="card-loc">🇧🇪&nbsp;België &middot; Linter</p></div>
+        </div>
+      </article></a>
+      <a class="card-name-link" href="../eten/373-t-speelkot.html">
+      <article class="card" data-num="373">
+        <div class="card-photo"><div class="card-photo-placeholder ph-plum">&#x27;</div><span class="card-num mono">0373</span></div>
+        <div class="card-body">
+          <div><h4 class="card-name">&#x27;T Speelkot</h4>
+          <p class="card-loc">🇧🇪&nbsp;België &middot; Oostende</p></div>
+        </div>
+      </article></a>
+      <a class="card-name-link" href="../eten/374-t-zaveltje.html">
+      <article class="card" data-num="374">
+        <div class="card-photo"><div class="card-photo-placeholder ph-plum">&#x27;</div><span class="card-num mono">0374</span></div>
+        <div class="card-body">
+          <div><h4 class="card-name">&#x27;T Zaveltje</h4>
+          <p class="card-loc">🇧🇪&nbsp;België &middot; Maaseik</p></div>
+        </div>
+      </article></a></div>
+</section>
+
+<div class="comparebar" id="comparebar" hidden>
+  <span id="compareCount" class="mono">0 favorieten</span>
+  <button id="compareOpenBtn" type="button">Vergelijken</button>
+  <button id="compareClearBtn" type="button">Wissen</button>
+</div>
+
+<div class="compare-modal" id="compareModal" hidden>
+  <div class="compare-modal-inner">
+    <button class="compare-close" id="compareCloseBtn" type="button">&#10005; Sluiten</button>
+    <h2>Jouw vergelijking</h2>
+    <p class="compare-sub">Klik op het hartje bij een plek om het hier toe te voegen of te verwijderen. Favorieten worden bewaard in je browser op dit apparaat.</p>
+    <div class="compare-table-wrap"><table id="compareTable"></table></div>
+  </div>
+</div>
+
+<footer class="backmatter site-footer">
+  <p class="mono">Familiereisgids &middot; 1318 plekken in Europa</p>
+</footer>
+<script src="../assets/entries-data.js"></script>
+<script>window.SITE_REL = "../";</script>
+<script src="../assets/site.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var el = document.getElementById('miniMap');
+  if(el && typeof L !== 'undefined'){
+    var lat = parseFloat(el.dataset.lat), lon = parseFloat(el.dataset.lon);
+    var m = L.map('miniMap', {zoomControl:false, dragging:false, scrollWheelZoom:false}).setView([lat, lon], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '&copy; OpenStreetMap'}).addTo(m);
+    L.circleMarker([lat, lon], {radius:8, color:'#fff', weight:2, fillColor:'#ec5aa8', fillOpacity:1}).addTo(m);
+  }
+});
+</script>
+</body>
+</html>
