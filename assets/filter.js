@@ -6,6 +6,7 @@
     var categoryFilter = document.getElementById('categoryFilter');
     var countryFilter = document.getElementById('countryFilter');
     var capacityFilter = document.getElementById('capacityFilter');
+    var facilityFilter = document.getElementById('facilityFilter');
     var favOnlyToggle = document.getElementById('favOnlyToggle');
     var resultCount = document.getElementById('resultCount');
     var noResults = document.getElementById('noResults');
@@ -16,6 +17,7 @@
       var cat = categoryFilter.value;
       var country = countryFilter.value;
       var minCapacity = capacityFilter && capacityFilter.value ? parseInt(capacityFilter.value, 10) : 0;
+      var facility = facilityFilter ? facilityFilter.value : '';
       var favOnly = favOnlyToggle.checked;
       var favs = window.SITE_FAVS || new Set();
       var visibleCount = 0;
@@ -27,6 +29,7 @@
         if(cat && card.dataset.category !== cat) matches = false;
         if(country && card.dataset.land !== country) matches = false;
         if(minCapacity && parseInt(card.dataset.capacity, 10) < minCapacity) matches = false;
+        if(facility && (card.dataset.facilities || '').split(',').indexOf(facility) === -1) matches = false;
         if(favOnly && !favs.has(num)) matches = false;
         card.style.display = matches ? '' : 'none';
         if(matches) visibleCount++;
@@ -62,10 +65,12 @@
     countryFilter.addEventListener('change', runFilter);
     favOnlyToggle.addEventListener('change', runFilter);
     if(capacityFilter) capacityFilter.addEventListener('change', runFilter);
+    if(facilityFilter) facilityFilter.addEventListener('change', runFilter);
     var resetBtn = document.getElementById('filterResetBtn');
     if(resetBtn) resetBtn.addEventListener('click', function(){
       searchInput.value = ''; categoryFilter.value = ''; countryFilter.value = '';
       if(capacityFilter) capacityFilter.value = '';
+      if(facilityFilter) facilityFilter.value = '';
       favOnlyToggle.checked = false;
       runFilter();
     });
