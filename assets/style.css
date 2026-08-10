@@ -54,7 +54,7 @@ button{font-family:inherit;}
   display:flex; align-items:center; gap:1.5rem;
 }
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; color:var(--ink); flex:none;}
-.brand-mark{width:1.7rem; height:1.7rem; flex:none;}
+.brand-mark{width:1.7rem; height:1.7rem; flex:none; display:block; object-fit:contain;}
 .brand-name{font-weight:800; font-size:1.02rem; letter-spacing:-.01em; white-space:nowrap;}
 .sitenav{display:flex; gap:1.4rem; flex:1;}
 .sitenav a{
