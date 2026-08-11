@@ -300,7 +300,7 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
   .toc-grid{grid-template-columns:1fr;}
   .toc-list{columns:1;}
   .result-count{margin-left:0; width:100%;}
-  .filterbar{top:53px;}
+  .filterbar{position:static; box-shadow:none;}
 }
 
 @media print{
