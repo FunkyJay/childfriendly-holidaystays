@@ -262,6 +262,10 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
 .info-row .value{font-weight:700; text-align:right;}
 .cta-website{display:block; text-align:center; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; padding:.85rem 1rem; border-radius:10px; font-size:.92rem;}
 .cta-website:hover{background:var(--pine);}
+.cta-route{display:block; text-align:center; background:#fff; color:var(--accent); text-decoration:none; font-weight:700; padding:.85rem 1rem; border-radius:10px; font-size:.92rem; border:2px solid var(--accent); margin-top:.6rem;}
+.cta-route:hover{background:var(--accent); color:#fff;}
+.card-route{color:var(--ink-soft); text-decoration:none; font-weight:700; white-space:nowrap;}
+.card-route:hover{color:var(--accent);}
 .mini-map{border-radius:12px; overflow:hidden; height:180px; border:1px solid var(--line);}
 
 .related{max-width:var(--maxw); margin:0 auto; padding:1rem 1.75rem 3rem;}

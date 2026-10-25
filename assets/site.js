@@ -134,6 +134,46 @@
     applyFavClasses();
     updateCompareBar();
 
+    function addRouteLinks(){
+      document.querySelectorAll('.fav-btn[data-num]').forEach(function(btn){
+        var num = parseInt(btn.dataset.num, 10);
+        var d = byNum[num];
+        if(!d || d.lat == null || d.lon == null) return;
+        var mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + d.lat + ',' + d.lon;
+
+        // Detail page: info-panel next to the big fav button
+        var panel = btn.closest('.info-panel');
+        if(panel && !panel.querySelector('.cta-route')){
+          var routeBtn = document.createElement('a');
+          routeBtn.className = 'cta-route';
+          routeBtn.href = mapsUrl;
+          routeBtn.target = '_blank';
+          routeBtn.rel = 'noopener';
+          routeBtn.innerHTML = '&#128663; Route plannen &#8599;';
+          var websiteLink = panel.querySelector('.cta-website');
+          if(websiteLink){ websiteLink.insertAdjacentElement('afterend', routeBtn); }
+          else { panel.insertBefore(routeBtn, panel.firstChild.nextSibling); }
+          return;
+        }
+
+        // List card: inside the card footer, next to the weblink
+        var card = btn.closest('.card');
+        if(card){
+          var foot = card.querySelector('.card-foot');
+          if(foot && !foot.querySelector('.card-route')){
+            var routeLink = document.createElement('a');
+            routeLink.className = 'card-route';
+            routeLink.href = mapsUrl;
+            routeLink.target = '_blank';
+            routeLink.rel = 'noopener';
+            routeLink.innerHTML = '&#128663; Route';
+            foot.insertBefore(routeLink, foot.firstChild);
+          }
+        }
+      });
+    }
+    addRouteLinks();
+
     var navToggle = document.getElementById('navToggle');
     var siteNav = document.getElementById('siteNav');
     if(navToggle && siteNav){
