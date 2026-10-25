@@ -174,6 +174,43 @@
     }
     addRouteLinks();
 
+    function formatCheckedDate(iso){
+      var parts = iso.split('-');
+      var months = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+      return parseInt(parts[2],10) + ' ' + months[parseInt(parts[1],10)-1] + ' ' + parts[0];
+    }
+
+    function addCheckedBadges(){
+      document.querySelectorAll('.fav-btn[data-num]').forEach(function(btn){
+        var num = parseInt(btn.dataset.num, 10);
+        var d = byNum[num];
+        if(!d || !d.checked_at) return;
+        var label = 'Laatst gecontroleerd: ' + formatCheckedDate(d.checked_at);
+
+        var panel = btn.closest('.info-panel');
+        if(panel && !panel.querySelector('.checked-badge')){
+          var badge = document.createElement('p');
+          badge.className = 'checked-badge';
+          badge.textContent = '&#10003; '.replace('&#10003;','✓') + label;
+          panel.appendChild(badge);
+          return;
+        }
+
+        var card = btn.closest('.card');
+        if(card){
+          var foot = card.querySelector('.card-foot');
+          if(foot && !foot.querySelector('.checked-badge')){
+            var span = document.createElement('span');
+            span.className = 'checked-badge';
+            span.title = label;
+            span.textContent = '✓ ' + d.checked_at;
+            foot.appendChild(span);
+          }
+        }
+      });
+    }
+    addCheckedBadges();
+
     var navToggle = document.getElementById('navToggle');
     var siteNav = document.getElementById('siteNav');
     if(navToggle && siteNav){

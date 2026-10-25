@@ -169,6 +169,7 @@ button{font-family:inherit;}
 .ph-sky{background:linear-gradient(135deg,#2f9ce8,#6ec1f5);}
 .ph-moss{background:linear-gradient(135deg,#5c8a3a,#8fbf5f);}
 .card-num{position:absolute; bottom:.5rem; right:.5rem; background:rgba(23,27,31,.72); color:#fff; font-size:.68rem; padding:.22rem .5rem; border-radius:100px; backdrop-filter:blur(2px);}
+.card-distance{position:absolute; top:.5rem; left:.5rem; z-index:2; background:rgba(23,27,31,.72); color:#fff; font-size:.68rem; font-weight:700; padding:.22rem .5rem; border-radius:100px; backdrop-filter:blur(2px);}
 .card-body{padding:1.1rem 1.15rem 1.2rem; display:flex; flex-direction:column; gap:.7rem; flex:1;}
 .card-name-link{text-decoration:none; color:inherit;}
 .card-name{font-size:1.06rem; font-weight:800; line-height:1.25;}
@@ -266,6 +267,8 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
 .cta-route:hover{background:var(--accent); color:#fff;}
 .card-route{color:var(--ink-soft); text-decoration:none; font-weight:700; white-space:nowrap;}
 .card-route:hover{color:var(--accent);}
+.checked-badge{color:var(--ink-soft); font-size:.68rem; white-space:nowrap;}
+.info-panel .checked-badge{margin:.6rem 0 0; text-align:center; font-size:.78rem;}
 .mini-map{border-radius:12px; overflow:hidden; height:180px; border:1px solid var(--line);}
 
 .related{max-width:var(--maxw); margin:0 auto; padding:1rem 1.75rem 3rem;}
