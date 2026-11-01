@@ -1,10 +1,19 @@
 (function(){
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', async function(){
     var mapEl = document.getElementById('map');
     if(!mapEl || typeof L === 'undefined') return;
 
     var DATA = window.SITE_ENTRIES || [];
+    if(window.sb){
+      try {
+        var { data, error } = await window.sb.from('entries').select('*');
+        if(!error && data && data.length) DATA = data;
+      } catch(e){ /* val terug op de statische data */ }
+    }
     var rel = window.SITE_REL || '';
+
+    var verblijfCount = DATA.filter(function(d){ return d.kind === 'verblijf'; }).length;
+    document.querySelectorAll('.map-count-live').forEach(function(el){ el.textContent = verblijfCount; });
 
     var map = L.map('map', {scrollWheelZoom: true}).setView([48.5, 10.5], 4);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
