@@ -133,6 +133,8 @@
 
     applyFavClasses();
     updateCompareBar();
+    window.SITE_REFRESH_FAVS = function(){ applyFavClasses(); updateCompareBar(); };
+    window.SITE_REFRESH_BADGES = function(){ addRouteLinks(); addCheckedBadges(); };
 
     function addRouteLinks(){
       document.querySelectorAll('.fav-btn[data-num]').forEach(function(btn){

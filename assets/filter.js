@@ -175,6 +175,8 @@
     window.SITE_ON_FAV_CHANGE = function(){
       if(favOnlyToggle.checked) runFilter();
     };
+    window.SITE_RERUN_FILTER = runFilter;
+    window.SITE_REFRESH_CARDS = function(){ cards = Array.prototype.slice.call(document.querySelectorAll('.card')); runFilter(); };
 
     runFilter();
   });

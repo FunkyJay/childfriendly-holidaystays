@@ -269,6 +269,21 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
 .card-route:hover{color:var(--accent);}
 .checked-badge{color:var(--ink-soft); font-size:.68rem; white-space:nowrap;}
 .info-panel .checked-badge{margin:.6rem 0 0; text-align:center; font-size:.78rem;}
+
+/* Auth / report modals */
+.modal{position:fixed; inset:0; background:rgba(23,27,31,.55); display:flex; align-items:center; justify-content:center; z-index:1000; padding:1rem;}
+.modal[hidden]{display:none;}
+.modal-box{background:#fff; border-radius:16px; padding:1.6rem; max-width:420px; width:100%; position:relative; max-height:85vh; overflow-y:auto;}
+.modal-close{position:absolute; top:.6rem; right:.8rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink-soft); line-height:1;}
+.modal-box h3{margin-top:0;}
+.modal-box form{display:flex; flex-direction:column; gap:.6rem;}
+.modal-box input, .modal-box textarea{padding:.6rem .7rem; border:1px solid #ddd; border-radius:8px; font-size:.92rem; font-family:inherit;}
+.auth-btn-row{display:flex; gap:.5rem;}
+.auth-btn-row button{flex:1;}
+.auth-msg{font-size:.82rem; color:var(--ink-soft); min-height:1.1em;}
+.nav-auth-link, .nav-suggest-link{cursor:pointer;}
+.report-link{display:block; text-align:center; margin-top:.6rem; font-size:.8rem; color:var(--ink-soft); text-decoration:none;}
+.report-link:hover{color:var(--accent);}
 .mini-map{border-radius:12px; overflow:hidden; height:180px; border:1px solid var(--line);}
 
 .related{max-width:var(--maxw); margin:0 auto; padding:1rem 1.75rem 3rem;}

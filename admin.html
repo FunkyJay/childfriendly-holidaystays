@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Familiereisgids</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  body{background:#f6f5f2;}
+  .admin-wrap{max-width:1100px; margin:0 auto; padding:2rem 1.5rem 4rem;}
+  .admin-gate{max-width:420px; margin:4rem auto; text-align:center;}
+  .admin-tabs{display:flex; gap:.5rem; margin-bottom:1.5rem; flex-wrap:wrap;}
+  .admin-tab{padding:.5rem 1rem; border-radius:100px; border:1px solid var(--line); background:#fff; cursor:pointer; font-weight:600; font-size:.9rem;}
+  .admin-tab.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .admin-panel{display:none;}
+  .admin-panel.active{display:block;}
+  table.admin-table{width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; font-size:.85rem;}
+  table.admin-table th, table.admin-table td{padding:.5rem .6rem; border-bottom:1px solid #eee; text-align:left; vertical-align:top;}
+  table.admin-table th{background:#f0efe9; position:sticky; top:0;}
+  .admin-table tr:hover{background:#fafafa;}
+  .admin-actions button{margin-right:.3rem; font-size:.78rem; padding:.3rem .6rem; border-radius:6px; border:1px solid var(--line); background:#fff; cursor:pointer;}
+  .admin-actions button.danger{color:#b43b3b; border-color:#b43b3b;}
+  .admin-actions button.good{color:#2f7a4f; border-color:#2f7a4f;}
+  .admin-search{width:100%; padding:.6rem .8rem; border-radius:8px; border:1px solid #ddd; margin-bottom:1rem; font-size:.9rem;}
+  .edit-form{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; background:#fff; padding:1.2rem; border-radius:12px; margin-bottom:1.5rem;}
+  .edit-form.full{display:none;}
+  .edit-form.full.active{display:grid;}
+  .edit-form label{display:flex; flex-direction:column; font-size:.8rem; font-weight:600; gap:.25rem;}
+  .edit-form label.span2{grid-column:1/-1;}
+  .edit-form input, .edit-form textarea, .edit-form select{font-weight:400; padding:.5rem; border:1px solid #ddd; border-radius:6px; font-size:.88rem; font-family:inherit;}
+  .edit-form .form-actions{grid-column:1/-1; display:flex; gap:.6rem;}
+  .pill{display:inline-block; padding:.15rem .5rem; border-radius:100px; font-size:.72rem; font-weight:600;}
+  .pill-pending{background:#fff3cd; color:#8a6d00;}
+  .pill-approved{background:#d8f0dd; color:#1f6b36;}
+  .pill-rejected{background:#fde2e2; color:#a33;}
+  .msg{font-size:.85rem; margin-bottom:1rem; min-height:1.2em;}
+  .count-badge{background:var(--accent); color:#fff; border-radius:100px; font-size:.7rem; padding:.05rem .4rem; margin-left:.3rem;}
+</style>
+</head>
+<body>
+<div class="admin-wrap">
+  <h1>Admin-paneel</h1>
+
+  <div class="admin-gate" id="gate">
+    <p>Je moet inloggen als admin om deze pagina te gebruiken.</p>
+    <input type="email" id="gateEmail" placeholder="e-mailadres"><br><br>
+    <input type="password" id="gatePassword" placeholder="wachtwoord"><br><br>
+    <button class="cta-website" id="gateLoginBtn">Inloggen</button>
+    <p class="msg" id="gateMsg"></p>
+  </div>
+
+  <div id="adminContent" hidden>
+    <p><button class="cta-website" id="logoutBtn" style="max-width:160px;">Uitloggen</button></p>
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="entries">Plekken</button>
+      <button class="admin-tab" data-tab="submissions">Meldingen <span class="count-badge" id="pendingCount">0</span></button>
+      <button class="admin-tab" data-tab="users">Gebruikers</button>
+    </div>
+
+    <!-- ENTRIES -->
+    <div class="admin-panel active" id="panel-entries">
+      <button class="cta-website" id="newEntryBtn" style="max-width:220px; margin-bottom:1rem;">+ Nieuwe plek toevoegen</button>
+      <div class="edit-form full" id="entryForm"></div>
+      <input type="text" class="admin-search" id="entrySearch" placeholder="Zoek op naam, plaats, land...">
+      <div style="overflow-x:auto;">
+        <table class="admin-table" id="entriesTable"></table>
+      </div>
+    </div>
+
+    <!-- SUBMISSIONS -->
+    <div class="admin-panel" id="panel-submissions">
+      <div id="submissionsList"></div>
+    </div>
+
+    <!-- USERS -->
+    <div class="admin-panel" id="panel-users">
+      <p>Voeg een extra admin toe op basis van e-mailadres (de gebruiker moet al een account hebben aangemaakt).</p>
+      <input type="email" id="newAdminEmail" placeholder="e-mailadres van nieuwe admin" style="padding:.6rem; width:300px; border-radius:8px; border:1px solid #ddd;">
+      <button class="cta-website" id="addAdminBtn" style="max-width:160px; display:inline-block;">Admin maken</button>
+      <p class="msg" id="usersMsg"></p>
+      <h3>Huidige admins</h3>
+      <table class="admin-table" id="adminsTable"></table>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/supabase-client.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
