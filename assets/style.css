@@ -284,6 +284,32 @@ table#compareTable td ul{margin:0; padding-left:1.1rem;}
 .nav-auth-link, .nav-suggest-link{cursor:pointer;}
 .report-link{display:block; text-align:center; margin-top:.6rem; font-size:.8rem; color:var(--ink-soft); text-decoration:none;}
 .report-link:hover{color:var(--accent);}
+.report-head{font-size:1.8rem; text-align:center; margin-bottom:-.4rem;}
+.auth-welcome{display:flex; align-items:center; gap:.7rem; margin-bottom:1rem;}
+.auth-welcome h3{margin:0;}
+
+/* Nav: account + plek-voorstellen, rechts uitgelijnd in .sitehead-actions */
+.nav-suggest-link{
+  display:flex; align-items:center; gap:.3rem;
+  background:var(--accent-warm); color:#fff; text-decoration:none; font-size:.78rem; font-weight:700;
+  padding:.4rem .75rem; border-radius:100px; flex:none; white-space:nowrap;
+}
+.nav-suggest-link:hover{opacity:.88;}
+.nav-auth-link{
+  display:flex; align-items:center; gap:.4rem;
+  text-decoration:none; color:var(--ink); font-size:.82rem; font-weight:700;
+  padding:.3rem .5rem .3rem .3rem; border-radius:100px; flex:none; white-space:nowrap;
+  border:1px solid var(--line); background:#fff;
+}
+.nav-auth-link:hover{background:var(--chip-bg);}
+.nav-avatar{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.6rem; height:1.6rem; border-radius:50%; color:#fff; font-weight:800; font-size:.78rem; flex:none;
+}
+@media (max-width:760px){
+  .nav-auth-name{display:none;}
+  .nav-suggest-link{padding:.4rem .6rem;}
+}
 .mini-map{border-radius:12px; overflow:hidden; height:180px; border:1px solid var(--line);}
 
 .related{max-width:var(--maxw); margin:0 auto; padding:1rem 1.75rem 3rem;}

@@ -239,8 +239,17 @@
     var { data, error } = await sb.from('admins').select('user_id, added_at');
     var table = document.getElementById('adminsTable');
     if(error){ table.innerHTML = 'Fout: ' + error.message; return; }
-    table.innerHTML = '<tr><th>User ID</th><th>Toegevoegd op</th></tr>' +
-      data.map(function(a){ return '<tr><td>' + esc(a.user_id) + '</td><td>' + new Date(a.added_at).toLocaleDateString('nl-BE') + '</td></tr>'; }).join('');
+    var ids = data.map(function(a){ return a.user_id; });
+    var profilesById = {};
+    if(ids.length){
+      var { data: profiles } = await sb.from('profiles').select('id, display_name, email').in('id', ids);
+      (profiles || []).forEach(function(p){ profilesById[p.id] = p; });
+    }
+    table.innerHTML = '<tr><th>Naam</th><th>E-mail</th><th>Admin sinds</th></tr>' +
+      data.map(function(a){
+        var p = profilesById[a.user_id];
+        return '<tr><td>' + esc(p ? p.display_name : '—') + '</td><td>' + esc(p ? p.email : a.user_id) + '</td><td>' + new Date(a.added_at).toLocaleDateString('nl-BE') + '</td></tr>';
+      }).join('');
   }
 
   document.getElementById('addAdminBtn').addEventListener('click', async function(){

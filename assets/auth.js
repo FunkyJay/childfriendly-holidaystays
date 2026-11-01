@@ -3,11 +3,23 @@
   var sb = window.sb;
   var currentUser = null;
   var currentIsAdmin = false;
+  var currentProfile = null;
 
   function esc(s){
     return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
+  }
+
+  var AVATAR_COLORS = ['#e07a5f','#3d6b57','#5a7fb0','#c9803a','#8e5a9e','#2f8f7a','#b0526a'];
+  function avatarColor(seed){
+    var sum = 0;
+    for(var i=0;i<seed.length;i++) sum += seed.charCodeAt(i);
+    return AVATAR_COLORS[sum % AVATAR_COLORS.length];
+  }
+  function avatarHtml(name){
+    var letter = (name || '?').trim().charAt(0).toUpperCase() || '?';
+    return '<span class="nav-avatar" style="background:' + avatarColor(name||'?') + '">' + esc(letter) + '</span>';
   }
 
   // ---------- UI: auth modal + nav pill injection ----------
@@ -41,8 +53,9 @@
   function renderAuthBody(){
     var body = document.getElementById('authModalBody');
     if(currentUser){
+      var name = (currentProfile && currentProfile.display_name) || currentUser.email;
       body.innerHTML =
-        '<h3>Welkom' + (currentUser.email ? ', ' + esc(currentUser.email) : '') + '</h3>' +
+        '<div class="auth-welcome">' + avatarHtml(name) + '<h3>Hoi, ' + esc(name) + '</h3></div>' +
         (currentIsAdmin ? '<p><a href="' + (window.SITE_REL||'') + 'admin.html" class="cta-website">Naar admin-paneel &rarr;</a></p>' : '') +
         '<p><button class="cta-website" id="authLogoutBtn" type="button">Uitloggen</button></p>';
       document.getElementById('authLogoutBtn').addEventListener('click', async function(){
@@ -55,6 +68,7 @@
       '<h3>Inloggen / Account aanmaken</h3>' +
       '<p class="auth-msg" id="authMsg"></p>' +
       '<form id="authForm">' +
+      '  <input type="text" id="authName" placeholder="Naam (alleen nodig bij account aanmaken)" autocomplete="name">' +
       '  <input type="email" id="authEmail" placeholder="e-mailadres" required autocomplete="email">' +
       '  <input type="password" id="authPassword" placeholder="wachtwoord (min. 6 tekens)" required minlength="6" autocomplete="current-password">' +
       '  <div class="auth-btn-row">' +
@@ -80,14 +94,33 @@
   }
 
   async function doSignup(){
+    var name = document.getElementById('authName').value.trim();
     var email = document.getElementById('authEmail').value.trim();
     var password = document.getElementById('authPassword').value;
     var msg = document.getElementById('authMsg');
+    if(!name){ msg.textContent = 'Vul ook je naam in.'; return; }
     if(!email || password.length < 6){ msg.textContent = 'Vul e-mail en een wachtwoord van min. 6 tekens in.'; return; }
     msg.textContent = 'Bezig...';
-    var { error } = await sb.auth.signUp({ email: email, password: password });
+    var { data, error } = await sb.auth.signUp({ email: email, password: password, options: { data: { display_name: name } } });
     if(error){ msg.textContent = 'Fout: ' + error.message; return; }
+    if(data && data.user){
+      await sb.from('profiles').upsert({ id: data.user.id, display_name: name, email: email });
+    }
     msg.textContent = 'Account aangemaakt! Check je e-mail om te bevestigen, en log daarna in.';
+  }
+
+  async function ensureProfile(){
+    if(!currentUser) { currentProfile = null; return; }
+    var { data } = await sb.from('profiles').select('*').eq('id', currentUser.id).maybeSingle();
+    if(data){
+      currentProfile = data;
+      // backfill e-mail als die nog ontbreekt (oudere accounts)
+      if(!data.email){ sb.from('profiles').update({ email: currentUser.email }).eq('id', currentUser.id); }
+    } else {
+      var fallbackName = (currentUser.user_metadata && currentUser.user_metadata.display_name) || currentUser.email;
+      await sb.from('profiles').upsert({ id: currentUser.id, display_name: fallbackName, email: currentUser.email });
+      currentProfile = { id: currentUser.id, display_name: fallbackName, email: currentUser.email };
+    }
   }
 
   // ---------- meldingsformulier (correctie of nieuwe plek) ----------
@@ -95,6 +128,7 @@
     var d = num ? (window.SITE_BY_NUM || {})[num] : null;
     var body = document.getElementById('reportModalBody');
     body.innerHTML =
+      '<div class="report-head">' + (d ? '⚠️' : '💡') + '</div>' +
       '<h3>' + (d ? 'Fout melden bij "' + esc(d.naam) + '"' : 'Nieuwe plek voorstellen') + '</h3>' +
       '<p class="auth-msg" id="reportMsg"></p>' +
       '<form id="reportForm">' +
@@ -150,7 +184,6 @@
     var localFavs = window.SITE_FAVS || new Set();
     var merged = new Set(remoteNums);
     localFavs.forEach(function(n){ merged.add(n); });
-    // push any local-only favorites up to the server
     var toInsert = Array.from(localFavs).filter(function(n){ return remoteNums.indexOf(n) === -1; })
       .map(function(n){ return { user_id: currentUser.id, entry_id: n }; });
     if(toInsert.length){ await sb.from('favorites').insert(toInsert); }
@@ -167,7 +200,6 @@
       var btn = e.target.closest('.fav-btn');
       if(!btn || !currentUser) return;
       var num = parseInt(btn.dataset.num, 10);
-      // after site.js's own toggle already ran (localStorage), mirror to server
       setTimeout(function(){
         var isFav = (window.SITE_FAVS || new Set()).has(num);
         if(isFav){ sb.from('favorites').upsert({ user_id: currentUser.id, entry_id: num }); }
@@ -192,33 +224,52 @@
     });
   }
 
-  function injectNavAuthLink(){
-    var nav = document.getElementById('siteNav');
-    if(!nav || nav.querySelector('.nav-auth-link')) return;
-    var li = document.createElement('a');
-    li.href = '#';
-    li.className = 'nav-auth-link';
-    li.textContent = 'Account';
-    li.addEventListener('click', function(e){
-      e.preventDefault();
-      injectAuthUI();
-      renderAuthBody();
-      showModal('authModal');
-    });
-    nav.appendChild(li);
+  // ---------- nav-items: rechts uitgelijnd in .sitehead-actions ----------
+  function renderNavAuthContent(){
+    var authLink = document.querySelector('.nav-auth-link');
+    if(!authLink) return;
+    if(currentUser){
+      var name = (currentProfile && currentProfile.display_name) || currentUser.email;
+      authLink.innerHTML = avatarHtml(name) + '<span class="nav-auth-name">' + esc(name.split(' ')[0]) + '</span>';
+    } else {
+      authLink.innerHTML = '<span class="nav-auth-name">Account</span>';
+    }
+  }
 
-    // "nieuwe plek voorstellen" link, los van een specifieke entry
+  function injectNavAuthLink(){
+    var actions = document.querySelector('.sitehead-actions');
+    if(!actions || actions.querySelector('.nav-auth-link')) return;
+    var navToggle = document.getElementById('navToggle');
+
     var suggestLi = document.createElement('a');
     suggestLi.href = '#';
     suggestLi.className = 'nav-suggest-link';
-    suggestLi.textContent = 'Plek voorstellen';
+    suggestLi.innerHTML = '&#128161; Plek voorstellen';
     suggestLi.addEventListener('click', function(e){
       e.preventDefault();
       injectAuthUI();
       window.SITE_OPEN_REPORT(null);
       showModal('reportModal');
     });
-    nav.appendChild(suggestLi);
+
+    var authLi = document.createElement('a');
+    authLi.href = '#';
+    authLi.className = 'nav-auth-link';
+    authLi.innerHTML = '<span class="nav-auth-name">Account</span>';
+    authLi.addEventListener('click', function(e){
+      e.preventDefault();
+      injectAuthUI();
+      renderAuthBody();
+      showModal('authModal');
+    });
+
+    if(navToggle){
+      actions.insertBefore(suggestLi, navToggle);
+      actions.insertBefore(authLi, navToggle);
+    } else {
+      actions.appendChild(suggestLi);
+      actions.appendChild(authLi);
+    }
   }
 
   async function refreshAuthState(){
@@ -226,12 +277,16 @@
     currentUser = data && data.session ? data.session.user : null;
     currentIsAdmin = false;
     if(currentUser){
+      await ensureProfile();
       var { data: adminRow } = await sb.from('admins').select('user_id').eq('user_id', currentUser.id).maybeSingle();
       currentIsAdmin = !!adminRow;
       syncFavoritesOnLogin();
+    } else {
+      currentProfile = null;
     }
     window.SITE_CURRENT_USER = currentUser;
     window.SITE_IS_ADMIN = currentIsAdmin;
+    renderNavAuthContent();
   }
 
   sb.auth.onAuthStateChange(function(){ refreshAuthState(); });
